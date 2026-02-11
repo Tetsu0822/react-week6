@@ -17,7 +17,7 @@ function Home() {
         ) : (
             <div className="container">
                 <h2>最新上架</h2>
-            <ProductCard products={products} handleViewMore={handleViewMore} />
+            <ProductCard products={products.slice(0, 6)} handleViewMore={handleViewMore} />
             </div>
         )}
         </>
