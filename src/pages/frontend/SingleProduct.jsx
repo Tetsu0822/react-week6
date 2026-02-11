@@ -20,7 +20,8 @@ function SingleProduct() {
                 `${VITE_API_BASE}/api/${VITE_API_PATH}/cart`,
                 data,
             );
-            console.log("加入購物車成功:", response.data);
+            // console.log("加入購物車成功:", response.data);
+            navigate("/cart");
             //navigate("/cart");
         } catch (error) {
             console.error("加入購物車失敗:", error);
