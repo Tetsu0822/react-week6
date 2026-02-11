@@ -45,7 +45,26 @@ function SingleProduct() {
                 {
                     !loading && !error && (<>
                         {products.filter(product => product.id === id).map(filteredProduct => (
-                            <div className="card" key={filteredProduct.id} style={{width:"18rem"}}>
+                            <>
+                            <div className="row border border-danger" key={filteredProduct.id}>
+                                <div className="col-md-4">
+                                    <img src={filteredProduct.imageUrl} className="p-3" alt={filteredProduct.title} />
+                                </div>
+                                <div className="col-md-8 p-3">
+                                    <h5 className="card-title">{filteredProduct.title}</h5>
+                                    <p className="card-text">{filteredProduct.description}</p>
+                                    <p className="card-text"><strong>價格:</strong> {filteredProduct.price} 元</p>
+                                    <p className="card-text"><small className="text-muted">單位: {filteredProduct.unit}</small></p>
+                                    <button
+                                        type="button"
+                                        className="btn btn-primary"
+                                        onClick={() => addCart(filteredProduct.id, 1)}
+                                    >
+                                        加入購物車
+                                    </button>
+                                </div>
+                            </div>
+                            {/* <div className="card" key={filteredProduct.id} style={{width:"18rem"}}>
                                 <img src={filteredProduct.imageUrl} className="card-img-top" alt={filteredProduct.title} />
                                 <div className="card-body">
                                     <h5 className="card-title">{filteredProduct.title}</h5>
@@ -60,8 +79,8 @@ function SingleProduct() {
                                         加入購物車
                                     </button>
                                 </div>
-                            </div>
-                        ))}
+                            </div> */}
+                        </>))}
                     </>)
                 }
             </div>
