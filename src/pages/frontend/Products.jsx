@@ -15,7 +15,10 @@ function Products() {
         ) : error ? (
             <p>Error: {error.message}</p>
         ) : (
+            <div className="container">
+                <h2>產品列表</h2>
             <ProductCard products={products} handleViewMore={handleViewMore} />
+            </div>
         )}
         </>
     )
