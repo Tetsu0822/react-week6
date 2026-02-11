@@ -1,0 +1,46 @@
+import { createHashRouter } from "react-router";
+import FrontendLayout from "../layout/FrontendLayout";
+import Home from "../pages/frontend/Home";
+import Products from "../pages/frontend/Products";
+import SingleProduct from "../pages/frontend/SingleProduct";
+import Cart from "../pages/frontend/Cart";
+import NotFound from "../pages/frontend/NotFound";
+import Checkout from "../pages/frontend/CheckOut";
+import Login from "../pages/Login";
+
+export const routes = createHashRouter([
+    {
+        path: "/",
+        element: <FrontendLayout />,
+        children: [
+            {
+                index: true,
+                element: <Home />
+            },
+            {
+                path: "product",
+                element: <Products />
+            },
+            {
+                path: "product/:id",
+                element: <SingleProduct />
+            },
+            {
+                path: "cart",
+                element: <Cart />
+            },
+            {
+                path: "checkout",
+                element: <Checkout />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "*",
+                element: <NotFound />
+            }
+        ]
+    }
+]);
