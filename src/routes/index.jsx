@@ -7,6 +7,7 @@ import Cart from "../pages/frontend/Cart";
 import NotFound from "../pages/frontend/NotFound";
 import Checkout from "../pages/frontend/CheckOut";
 import Login from "../pages/Login";
+import Utils from "../pages/frontend/Utils";
 
 export const routes = createHashRouter([
     {
@@ -36,6 +37,10 @@ export const routes = createHashRouter([
             {
                 path: "login",
                 element: <Login />
+            },
+            {
+                path: "utils",
+                element: <Utils />
             },
             {
                 path: "*",
